@@ -1,22 +1,19 @@
-import React, {  createContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FacebookIcon from '@mui/icons-material/FacebookRounded';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
-import { Box, Grid, makeStyles, Paper, Stack, Typography } from '@mui/material';
+import { Box, Grid, Paper, Stack, Typography } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
 import Background from './Background';
 
 
 export default function Login(props:any){
-
-    const navigate = useNavigate();
-    const [ loading , setLoading ] = useState<boolean>(false)
     const [ email , setEmail ] = useState<string>("");
     const [ pass , setPassword ] = useState<string>("");
-    const [ res , setRes ] = useState<object>()
+
    
     
     function Copyright(props: any) {

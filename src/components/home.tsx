@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { onAuthStateChanged, signOut, User} from 'firebase/auth'
-import auth from '../config/config';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { onAuthStateChanged, signOut} from 'firebase/auth'
+import { useNavigate } from 'react-router-dom';
 import Background from './Background';
 import { getAuth } from "firebase/auth";
 import { Button } from '@mui/material';
 
-export default function Home(props: any){
+export default function Home(){
         const auth = getAuth();
         const [ name , setName ] = useState<string>("")
         const [ picUrl , setPicUrl ] = useState<string>("")
@@ -25,7 +24,7 @@ export default function Home(props: any){
                 }
             }) 
              return unsubscribe
-        }, [])
+        })
   
 
 const navigate = useNavigate();
@@ -39,7 +38,7 @@ const navigate = useNavigate();
         <Background>
             <div className='home' >
                 <div className='picture'> 
-                <img src={picUrl} alt="picture.png" />
+                <img src={picUrl} alt="" />
                 </div>
                 
                 <p style={{
