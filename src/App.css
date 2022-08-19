@@ -1,38 +1,130 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  background: whitesmoke;
+}
+span{
+  font-size: smaller;
+  margin: 0.46vw;
+}
+.containers{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.bubbles{
+  position: relative;
+  display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.bubbles span{
+  position: relative;
+  width: 3vh;
+  height: 3vh;
+  background: #9faae1;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.5vh #9faae144, 0 0 1vh #9faae1, 0 0 2vh #9faae1;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(130s / var(--my-css-var));
+}
+.bubbles span:nth-child(even){
+  background: #b1adae;
+  box-shadow: 0 0 0 0.5vh #928f9044, 0 0 1vh #928f90, 0 0 2vh #928f90;
+}
+@keyframes animate{
+  0%{
+    transform: translateY(100vh) scale(0);
+  }
+
+  100%{
+    transform: translateY(-10vh) scale(1);
   }
 }
+.contain{
+  background: none;
+}
+.text{
+  color: white !important;
+  border-color: #f1f1f1 !important;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.textfield__label{
+  color : white !important;
+  border: 1px solid  #f1f1f1 !important;
+}
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.home{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: auto;
 }
-
-.App-link {
-  color: #61dafb;
+.picture{
+  margin: 50px auto;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+img{
+  width: 15vw;
+  height: 15vw;
+  margin: auto;
+  border-radius: 50%;
+}
+@media screen and (max-width: 500px){
+  .contain{
+    width: 100%;
   }
 }
